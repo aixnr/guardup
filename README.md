@@ -1,6 +1,22 @@
 # `guardup` WireGuard CLI Tool
 
+There are quite a number of WireGuard administration tools already, for instance [WG UI](https://github.com/EmbarkStudios/wg-ui), [wireguard-ui](https://github.com/ngoduykhanh/wireguard-ui), [Subspace (community)](https://github.com/subspacecommunity/subspace), [wg-manager](https://github.com/perara/wg-manager), [Mistborn](https://gitlab.com/cyber5k/mistborn), etc.
+Here we quickly notice that they mostly have a rather unimaginative name.
+
+`guardup` was born out of boredom and I was plagued with curiosity to try to code something useful.
+I have been managing WireGuard peers for a few years now, and decided it was time to create a CLI tool to make my life a little easier.
+The name came from *Monster Hunter: World*, a reference to shield-based skill *Guard Up* that allows player to guard against ordinarily unblockable attacks, e.g. Teostra's supernova.
+
 ## Building and Testing
+
+`guardup` is built using `pyinstaller`.
+Before building, prepare a virtual environment.
+Example here is using `pipenv`, installing packages as described in `Pipfile`.
+
+```bash
+pipenv install
+pipenv shell
+```
 
 To build, init, and test:
 
@@ -22,7 +38,7 @@ make uninstall && make dir && sudo rm /etc/wireguard/wg0.conf
 # Create the program configuration directory
 sudo mkdir -p /var/guardup
 
-# Begin program initialization (mandataory)
+# Begin program initialization (mandatory)
 sudo ./guardup init
 
 # Generate keys for host (server; mandatory)
